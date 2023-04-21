@@ -88,7 +88,7 @@ class ExtraNetworksPage:
 
         subdirs = {}
         for parentdir in [os.path.abspath(x) for x in self.allowed_directories_for_previews()]:
-            for x in glob.glob(os.path.join(parentdir, '**/*'), recursive=True):
+            for x in glob.glob(os.path.join(parentdir, '**', '*'), recursive=True):
                 if not os.path.isdir(x):
                     continue
 

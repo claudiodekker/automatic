@@ -113,7 +113,7 @@ args = Map({
 
 
 async def plotloss(params):
-    logdir = os.path.abspath(os.path.join(cmdflags['embeddings_dir'], '../train/log'))
+    logdir = os.path.abspath(os.path.join(cmdflags['embeddings_dir'], '..', 'train', 'log'))
     try:
         plot(logdir, params.name)
     except Exception as err:
@@ -246,7 +246,7 @@ async def preprocess(params):
         log.error({ 'preprocess error': { 'not a valid input': params.src } })
     if len(images) > 0:
         img = grid(images, labels = None, width = 2048, height = 2048, border = 8, square = True)
-        logdir = os.path.abspath(os.path.join(cmdflags['embeddings_dir'], '../train/log'))
+        logdir = os.path.abspath(os.path.join(cmdflags['embeddings_dir'], '..', 'train', 'log'))
         Path(logdir).mkdir(parents = True, exist_ok = True)
         fn = os.path.join(logdir, params.name + '.inputs.jpg')
         img.save(fn)
@@ -260,8 +260,8 @@ async def check(params):
     global cmdflags # pylint: disable=global-statement
     cmdflags = await get('/sdapi/v1/cmd-flags')
 
-    logdir = os.path.abspath(os.path.join(cmdflags['embeddings_dir'], '../train/log', params.name))
-    logfile = os.path.abspath(os.path.join(cmdflags['embeddings_dir'], '../train/log', params.name + '.train.log'))
+    logdir = os.path.abspath(os.path.join(cmdflags['embeddings_dir'], '..', 'train', 'log', params.name))
+    logfile = os.path.abspath(os.path.join(cmdflags['embeddings_dir'], '..', 'train', 'log', params.name + '.train.log'))
     set_logfile(logfile)
 
     log.info({ 'checking server options' })

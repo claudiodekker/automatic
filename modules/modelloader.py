@@ -29,7 +29,7 @@ def load_models(model_path: str, model_url: str = None, command_path: str = None
         places = []
 
         if command_path is not None and command_path != model_path:
-            pretrained_path = os.path.join(command_path, 'experiments/pretrained_models')
+            pretrained_path = os.path.join(command_path, 'experiments', 'pretrained_models', '')
             if os.path.exists(pretrained_path):
                 print(f"Appending path: {pretrained_path}")
                 places.append(pretrained_path)
@@ -40,7 +40,7 @@ def load_models(model_path: str, model_url: str = None, command_path: str = None
 
         for place in places:
             if os.path.exists(place):
-                for file in glob.iglob(place + '**/**', recursive=True):
+                for file in glob.iglob(place + '**' + os.sep + **', recursive=True):
                     full_path = file
                     if os.path.isdir(full_path):
                         continue
@@ -100,7 +100,7 @@ def cleanup_models():
     src_path = os.path.join(root_path, "SwinIR")
     dest_path = os.path.join(models_path, "SwinIR")
     move_files(src_path, dest_path)
-    src_path = os.path.join(root_path, "repositories/latent-diffusion/experiments/pretrained_models/")
+    src_path = os.path.join(root_path, "repositories', "latent-diffusion", "experiments", "pretrained_models")
     dest_path = os.path.join(models_path, "LDSR")
     move_files(src_path, dest_path)
     src_path = os.path.join(root_path, "ScuNET")

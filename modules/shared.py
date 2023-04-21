@@ -261,7 +261,7 @@ options_templates.update(options_section(('system-paths', "System Paths"), {
     "ckpt_dir": OptionInfo(os.path.join(paths.models_path, 'Stable-diffusion'), "Path to directory with stable diffusion checkpoints"),
     "vae_dir": OptionInfo(os.path.join(paths.models_path, 'VAE'), "Path to directory with VAE files"),
     "embeddings_dir": OptionInfo(os.path.join(paths.models_path, 'embeddings'), "Embeddings directory for textual inversion"),
-    "embeddings_templates_dir": OptionInfo(os.path.join(paths.script_path, 'train/templates'), "Embeddings train templates directory"),
+    "embeddings_templates_dir": OptionInfo(os.path.join(paths.script_path, 'train', 'templates'), "Embeddings train templates directory"),
     "hypernetwork_dir": OptionInfo(os.path.join(paths.models_path, 'hypernetworks'), "Hypernetwork directory"),
     "codeformer_models_path": OptionInfo(os.path.join(paths.models_path, 'Codeformer'), "Path to directory with codeformer model file(s)."),
     "gfpgan_models_path": OptionInfo(os.path.join(paths.models_path, 'GFPGAN'), "Path to directory with GFPGAN model file(s)"),

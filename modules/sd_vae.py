@@ -53,24 +53,24 @@ def refresh_vae_list():
     vae_dict.clear()
 
     vae_paths = [
-        os.path.join(sd_models.model_path, '**/*.vae.ckpt'),
-        os.path.join(sd_models.model_path, '**/*.vae.pt'),
-        os.path.join(sd_models.model_path, '**/*.vae.safetensors'),
-        os.path.join(shared.opts.vae_dir, '**/*.ckpt'),
-        os.path.join(shared.opts.vae_dir, '**/*.pt'),
-        os.path.join(shared.opts.vae_dir, '**/*.safetensors'),
+        os.path.join(sd_models.model_path, '**', '*.vae.ckpt'),
+        os.path.join(sd_models.model_path, '**', '*.vae.pt'),
+        os.path.join(sd_models.model_path, '**', '*.vae.safetensors'),
+        os.path.join(shared.opts.vae_dir, '**', '*.ckpt'),
+        os.path.join(shared.opts.vae_dir, '**', '*.pt'),
+        os.path.join(shared.opts.vae_dir, '**', '*.safetensors'),
     ]
     if shared.opts.ckpt_dir is not None and os.path.isdir(shared.opts.ckpt_dir):
         vae_paths += [
-            os.path.join(shared.opts.ckpt_dir, '**/*.vae.ckpt'),
-            os.path.join(shared.opts.ckpt_dir, '**/*.vae.pt'),
-            os.path.join(shared.opts.ckpt_dir, '**/*.vae.safetensors'),
+            os.path.join(shared.opts.ckpt_dir, '**', *.vae.ckpt'),
+            os.path.join(shared.opts.ckpt_dir, '**', *.vae.pt'),
+            os.path.join(shared.opts.ckpt_dir, '**', *.vae.safetensors'),
         ]
     if shared.opts.vae_dir is not None and os.path.isdir(shared.opts.vae_dir):
         vae_paths += [
-            os.path.join(shared.opts.vae_dir, '**/*.ckpt'),
-            os.path.join(shared.opts.vae_dir, '**/*.pt'),
-            os.path.join(shared.opts.vae_dir, '**/*.safetensors'),
+            os.path.join(shared.opts.vae_dir, '**', *.ckpt'),
+            os.path.join(shared.opts.vae_dir, '**', *.pt'),
+            os.path.join(shared.opts.vae_dir, '**', *.safetensors'),
         ]
     candidates = []
     for path in vae_paths:
